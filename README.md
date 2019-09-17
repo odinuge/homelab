@@ -15,19 +15,19 @@ The primary goals of this project are...
 - 3 x [Tinker Board S](https://www.asus.com/no/Single-Board-Computer/Tinker-Board-S/)
   - 2GiB RAM
   - 16GiB eMMC + 32GiB mmcblk storage
-  - Armbian GNU/Linux 10 (buster) - (arm32)
+  - Armbian GNU/Linux 10 buster (arm32)
 - 1 x [Raspberry Pi 4 B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
   - 4GiB RAM
   - 32GiB mmcblk + 128GiB ssd storage
-  - Raspbian GNU/Linux 10 (buster) - (arm32)
+  - Raspbian GNU/Linux 10 buster (arm32)
 - 1 x [Raspberry Pi 3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
   - 2GiB RAM
   - 32GiB mmcblk storage
-  - Raspbian GNU/Linux 10 (buster) - (arm32)
+  - Raspbian GNU/Linux 10 buster (arm32)
 - 1 x Custom desktop w/ [Intel 4670K @ 4.2GHz](https://ark.intel.com/content/www/us/en/ark/products/75048/intel-core-i5-4670k-processor-6m-cache-up-to-3-80-ghz.html)
   - 24GiB RAM
   - 256GiB ssd storage + 1TiB HDD storage
-  - Arch Linux - (x86_64)
+  - Arch Linux (x86_64)
   - kvm host running [CONTAINER-OPTIMIZED OS](https://cloud.google.com/container-optimized-os/) VMs
 
 ## Networking
