@@ -1,5 +1,9 @@
 # homelab
 
+> Odin's homelab setup
+
+![homelab](/media/homelab_1.jpg)
+
 ## Goals
 
 The primary goals of this project are...
@@ -7,8 +11,6 @@ The primary goals of this project are...
 - to have a highly-available cluster for home autmation & testing
 - to have no SPOFs (Single Point of Failure)
 - to have fun (most important)
-
-![homelab](/media/homelab_1.jpg)
 
 ## Hardware
 
