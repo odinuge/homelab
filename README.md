@@ -1,6 +1,6 @@
 # homelab
 
-< insert img here >
+![homelab](/media/homelab_1.jpg)
 
 ## Goals
 
