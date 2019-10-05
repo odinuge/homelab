@@ -1,6 +1,8 @@
 # homelab
 
-< insert img here >
+> Odin's homelab setup
+
+![homelab](/media/homelab_1.jpg)
 
 ## Goals
 
