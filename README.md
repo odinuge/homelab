@@ -23,7 +23,7 @@ The primary goals of this project are...
   - 32GiB mmcblk + 128GiB ssd storage
   - Raspbian GNU/Linux 10 buster (arm32)
 - 1 x [Raspberry Pi 3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
-  - 2GiB RAM
+  - 1GiB RAM
   - 32GiB mmcblk storage
   - Raspbian GNU/Linux 10 buster (arm32)
 - 1 x Custom desktop w/ [Intel 4670K @ 4.2GHz](https://ark.intel.com/content/www/us/en/ark/products/75048/intel-core-i5-4670k-processor-6m-cache-up-to-3-80-ghz.html)
