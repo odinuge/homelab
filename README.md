@@ -57,4 +57,4 @@ The primary goals of this project are...
 - [Home Assistant](https://www.home-assistant.io/) running inside Kubernetes. Floats beetween all nodes. Does things like turning on and off lights, and controlling the temperature based of various inputs.
 - [emqx](https://github.com/emqx/emqx) as mqtt broker (mqtt is awesome btw.). Currently running 3 instances clustered together.
 - [Node Red](https://nodered.org/) for creating automations. Connected to Home Assistant.
-- [ESPHome](https://esphome.io) for creating simple & cheap sensors with `es32/esp8266`s
+- [ESPHome](https://esphome.io) for creating simple & cheap sensors with `esp32/esp8266`s
