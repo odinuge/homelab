@@ -45,6 +45,22 @@ The primary goals of this project are...
 - Gateway is `10.12.1.1`
   - Three nodes run as gateways with access to WAN (still behind NAT tho.), eliminating gw SPOF
 
+## TODO
+- Look into running ceph
+- Switch to [Cilium](https://cilium.io/) for networking (instead of flannel).
+  - eBPF is awesome, and so is hubble
+  - Ish. official support for aarch64, but missing images. Need to verify arm32
+  - kernel on Armbian (for tinkerboard) has to be self compiled to enable eBPF :/
+  - Add [Cluster Mesh](https://cilium.io/blog/2019/03/12/clustermesh/) to connect multiple clusters
+- Switch to cgroup v2 only
+  - Still no support in  most container runtimes like cri-o, docker, containerd. Partial support in runc and k8s, but works in podman and crun (yay)
+- Try rook and ceph
+  - Since rpi4 run aarch64, it should be possible to run ceph for block storage
+  - Also, gluster has been runnning (maybe a bit too) stable for 1,5 years now, but since it runs on mmcblk-storage, it may blow up at any time... Block storage from SSDs would be awesome!!
+  - There are still some stuff that has to be done for both aarch64 and arm32, but _should_ be possible
+  - kernel on Armbian (for tinkerboard) has to be self compiled to enable ceph/rbd client support :/
+- New image with the new hardware
+
 ## Software
 
 - [k8s](https://k8s.io) does its things in a high availability manner. Running 3 nodes as masters, ensuring that stuff works even if one node dies. Using [metallb](https://metallb.universe.tf/) as a Layer 2 load-balancer for services with type `LoadBalancer`
