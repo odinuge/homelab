@@ -14,6 +14,10 @@ The primary goals of this project are...
 
 ## Hardware
 
+- 3 x [Raspberry Pi 4 B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
+  - 4GiB RAM
+  - 32GiB mmcblk + 128GiB ssd storage (for os)
+  - Ubuntu 20.04 'Focal Fossa' (aarch64)
 - 3 x [Tinker Board S](https://www.asus.com/no/Single-Board-Computer/Tinker-Board-S/)
   - 2GiB RAM
   - 16GiB eMMC + 32GiB mmcblk storage
@@ -21,10 +25,10 @@ The primary goals of this project are...
 - 1 x [Raspberry Pi 4 B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
   - 4GiB RAM
   - 32GiB mmcblk + 128GiB ssd storage
-  - Raspbian GNU/Linux 10 buster (arm32)
+  - Raspbian GNU/Linux 10 buster (arm32) (soon Ubuntu 20.04)
 - 1 x [Raspberry Pi 3 B+](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/)
   - 1GiB RAM
-  - 32GiB mmcblk storage
+  - 32GiB mmcblk storage - dead :/
   - Raspbian GNU/Linux 10 buster (arm32)
 - 1 x Custom desktop w/ [Intel 4670K @ 4.2GHz](https://ark.intel.com/content/www/us/en/ark/products/75048/intel-core-i5-4670k-processor-6m-cache-up-to-3-80-ghz.html)
   - 24GiB RAM
