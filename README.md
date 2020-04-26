@@ -63,7 +63,9 @@ The primary goals of this project are...
 
 ## Software
 
-- [k8s](https://k8s.io) does its things in a high availability manner. Running 3 nodes as masters, ensuring that stuff works even if one node dies. Using [metallb](https://metallb.universe.tf/) as a Layer 2 load-balancer for services with type `LoadBalancer`
+- [k8s](https://k8s.io) does its things in a high availability manner. Running 3 nodes as masters, ensuring that stuff works even if one node dies.
+  - [metallb](https://metallb.universe.tf/) as a Layer 2 load-balancer for services with type `LoadBalancer`
+  - 2xTinkerboards + 1xRpi4 as master nodes
 - [gluster](https://www.gluster.org/) for distributed storage. Dead simple block storage that can be used inside the cluster via persistent volumes in k8s.
   - Looking into geo replication for off site backups.
   - [ceph](https://ceph.io/) is awesome too, but doesn't support `arm32` (and it _eats_ ram), but may be an alternative at a later stage.
@@ -73,6 +75,7 @@ The primary goals of this project are...
 ## Monitoring
 
 - [Prometheus](https://prometheus.io/) with a set of custom exporters (including data from Home Assistant)
+  - [Thanos](https://thanos.io/) for long term storage
 - [slack](https://slack.com) for alerting
 
 ## Home Automation
