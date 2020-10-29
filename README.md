@@ -14,7 +14,11 @@ The primary goals of this project are...
 
 ## Hardware
 
-- 4 x [Raspberry Pi 4B](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
+- 1 x [Raspberry Pi 4B @ 8GiB](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
+  - 8GiB RAM
+  - 32GiB mmcblk (boot) + 128GiB ssd storage (64GiB for os & 64GiB for gluster)
+  - Ubuntu 20.04 'Focal Fossa' (aarch64)
+- 4 x [Raspberry Pi 4B @ 4GiB](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/)
   - 4GiB RAM
   - 32GiB mmcblk (boot) + 128GiB ssd storage (64GiB for os & 64GiB for gluster)
   - Ubuntu 20.04 'Focal Fossa' (aarch64)
@@ -38,24 +42,24 @@ The primary goals of this project are...
   - Three nodes run as gateways with access to WAN (still behind NAT tho.), eliminating gw SPOF
 
 ## TODO
+
 - Switch to cgroup v2 only
-  - Still no support in  most container runtimes like cri-o, docker, containerd. Partial support in runc and k8s, but works in podman and crun (yay)
+  - Waiting for new containerd builds for Ubuntu
 - New image with the new hardware
-- Looking into geo replication for off site backups.
 
 ## Software
 
 - [k8s](https://k8s.io) does its things in a high availability manner. Running 3 nodes as masters, ensuring that stuff works even if one node dies.
   - [metallb](https://metallb.universe.tf/) as a Layer 2 load-balancer for services with type `LoadBalancer`
   - 3xRpi4 as master nodes
-- [gluster](https://www.gluster.org/) for distributed storage. Dead simple block storage that can be used inside the cluster via persistent volumes in k8s.
-  - Currently runs on 3 x 64GiB USB3 SSD drives (64GiB for gluster and 64GiB for system).
+- [Longhorn](https://longhorn.io/) for distributed block storage. Pretty simple block storage for using PVCs in k8s, with simple backup systems and a nice shiny ui.
+  - Currently runs on 4 x 64GiB USB3 SSD drives (64GiB for longhorn and 64GiB for system).
 - [keepalived](https://www.keepalived.org/) for configuring fallback routing for the three gateways, making the connection work even tho a gateway dies.
 
 ## Monitoring
 
 - [Prometheus](https://prometheus.io/) with a set of custom exporters (including data from Home Assistant)
-  - [Thanos](https://thanos.io/) for long term storage
+  - [VictoriaMetrics](https://victoriametrics.com/) for long term storage
 - [slack](https://slack.com) for alerting
 
 ## Home Automation
@@ -66,8 +70,13 @@ The primary goals of this project are...
 - [ESPHome](https://esphome.io) for creating simple & cheap sensors with `esp32/esp8266`s
 
 # Old TODOS
-- ~Look into running ceph~
-  - Small pain with images only supporting x86\_64. Some support arm64 tho., but none works on arm32.
+
+- Looking into geo replication for off site backups.
+  - Longhorn support backups to s3, and just works!
+- Look into running longhorn
+  - Longhorn looks awesome, but has no support for aarch64. _EDIT_: Supports aarch64 now!
+- Look into running ceph
+  - Small pain with images only supporting x86_64. Some support arm64 tho., but none works on arm32.
   - Deploying simple ceph cluster with rook used about 4.5GiB memory when idle, aka. eating a bit too much on rpi4
   - gluster works well, and is stabel as hell, and only use about ~200MiB per node, so ill stick with that.
 - Switch to [Cilium](https://cilium.io/) for networking (instead of flannel).
